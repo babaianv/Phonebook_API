@@ -20,15 +20,7 @@ public class UpdateContactTests extends TestBase {
     @BeforeMethod
     public void precondition () {
 
-        /*
-        Не знаю на сколько так правильно и пришлось помучаться, а ответ оказался в простом if/
-        Мне не нравилось то что для каждого теста создавался новый аккаунт и вследствии он изменялся исходя сценария
-        Мне кажется это не совсем правильно, так как переполняет базу.
-        Правильный ли подход, что для всех тестов входным данным является один и тот же аккаунт и каждый тест применяет
-        последовательно свои условия изменения? или же нужно строго создавать новый аккаунт?
-        Спасибо
-         */
-       if (contactDto == null){
+
            contactDto = ContactDto.builder()
                    .name("Elena")
                    .lastName("Smith")
@@ -49,7 +41,7 @@ public class UpdateContactTests extends TestBase {
            String[] array = message.split(": ");
            contactDto.setId(array[1]);
        }
-    }
+
 
                //TEST1 PASS
     @Test
